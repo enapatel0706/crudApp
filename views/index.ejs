@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><%= title%></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.2/js/bootstrap.min.js" integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+   
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.2/js/bootstrap.bundle.min.js" integrity="sha512-BOsvKbLb0dB1IVplOL9ptU1EYA+LuCKEluZWRUYG73hxqNBU85JBIBhPGwhQl7O633KtkjMv8lvxZcWP+N3V3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color:black;
+      }
+      
+      li {
+        float:left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 18px 50px;
+       
+        text-decoration: none;
+      }
+  
+
+
+      /* table*/
+      table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid hsl(0, 4%, 5%);
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+#up{
+    color: black;
+}
+#trash{
+    color: black;
+}
+      
+      </style>
+      </head>
+      <body>
+      
+      <ul>
+        <li><a  class="fa fa-home active" href="/">Home</a></li>
+        <li><a  class="fa fa-user-plus" href="/add">Add User</a></li>
+        <li><a  class="fa fa-info-circle"href="#contact">About</a></li>
+        <li><a  class="fa fa-phone" href="#about">Contact</a></li>
+      </ul>
+
+
+      <div class="container">
+        <div class="row ">
+            <div class="col-lg-12">
+                <% if (users != '') { %>
+                    
+
+
+                    <table>
+                        <tr>
+                          <th>ID</th>
+                          <th>Image</th>
+                          <th>Name</th>
+                          <th>E-Mail</th>
+                          <th>Phone</th>
+                          <th>Action</th>
+                        </tr>
+                       
+                      <% users.forEach((row,index) =>{%> 
+                      
+                  
+                        <tr>
+                            <td><%= index %> </td>
+                            <td><img src="<%= row.image %> " width="50" class="img-thumbnail"></td>
+                            <td><%= row.name %> </td>
+                            <td><%= row.email %> </td>
+                            <td><%= row.phone %> </td>
+                            <td>
+                                <a href="/edit/<%=row._id %> "><i  id="up"class="fa fa-edit fa-lg"></i></a>
+                               <a href="/delete/<%=row._id %> "> <i id="trash" class="fa fa-trash" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                  
+                                  
+                        <% } )%> 
+                    </table>
+
+                     
+                   <% }else{ %>
+                    <h1>No user found in the database</h1>
+<% } %> 
+
+
+
+
+              
+            </div>
+        </div>
+      </div>
+
+    
+
+</body>
+</html>

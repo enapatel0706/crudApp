@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><%= title%></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.2/js/bootstrap.min.js" integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+   
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.2/js/bootstrap.bundle.min.js" integrity="sha512-BOsvKbLb0dB1IVplOL9ptU1EYA+LuCKEluZWRUYG73hxqNBU85JBIBhPGwhQl7O633KtkjMv8lvxZcWP+N3V3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color:black;
+      }
+      
+      li {
+        float:left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 18px 50px;
+       
+        text-decoration: none;
+      }
+    
+
+
+/* form */
+
+      body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=email] , input[type=phone]
+,input[type=file]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=email]:focus ,input[type=phone]:focus
+,input[type=file]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: rgb(12, 69, 110);
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+      
+      </style>
+      </head>
+      <body>
+      
+      <ul>
+        <li><a  class="fa fa-home active" href="/">Home</a></li>
+        <li><a  class="fa fa-user-plus" href="/add">Add User</a></li>
+        <li><a  class="fa fa-info-circle"href="#contact">About</a></li>
+        <li><a  class="fa fa-phone" href="#about">Contact</a></li>
+      </ul>
+
+
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Add Users Page</h1>
+            </div>
+        </div>
+        
+
+        <form action="/add" method="post">
+            <div class="container">
+              <h1>Add New User</h1>
+              
+              <hr>
+          
+              <label for="name"><b>name</b></label>
+              <input type="text" placeholder="Enter name" name="name" id="name" required>
+          
+              <label for="email"><b>email</b></label>
+              <input type="email" placeholder="Enter email" name="email" id="email" required>
+          
+              <label for="phone"><b>phone</b></label>
+              <input type="phone" placeholder="Enter phone" name="phone" id="phone" required>
+              <label for="image"><b>Select Image</b></label>
+              <input type="file"  placeholder="choose file" id="file" name="image" required>
+              <hr>
+            
+          
+              <button type="submit" class="registerbtn">Add User</button>
+            </div>
+            
+            
+          </form>
+      </div>
+
+
+    
+
+</body>
+</html>
