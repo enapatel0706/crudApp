@@ -2,7 +2,8 @@ node{
     
     stage('Git')
     {
-        git 'https://github.com/enapatel0706/crudApp.git'
+    git credentialsId: '9acbb74d-f979-46e3-bdf9-15b13882f11a', 
+    url: 'https://github.com/enapatel0706/crudApp.git'
     }
     stage('Build'){
       
